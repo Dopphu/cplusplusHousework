@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include"student.h"
+#include"list.h"
 using namespace std;
 Student demo1("Dopphu", "201978030304", 100, 99, 98);
 void addStudent();
@@ -16,7 +17,7 @@ int main(){
     cout<<"project running"<<endl;
     int times = 0;
     char selection;
-    
+    List demo;
 	//和游戏一样，程序死循环开始！ 
 	while(true){
     		cout<<"Q/q 退出！"<<endl
@@ -62,6 +63,7 @@ void addStudent(){
 	cin>>flag;
 	if(flag == 'y'){
 		Student temp(n, num, c, m, e); 
+		
 		/*缺少一个往学生表添加的功能,只是创建了没有往表里添加*/
 		cout<<"信息成功录入！"<<endl;
 	}else{

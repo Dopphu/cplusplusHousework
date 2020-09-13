@@ -3,6 +3,7 @@
 #define STUDENT_H
 using namespace std;
 class Student{
+	friend class List;
     public:
     	//默认构造函数 
         Student(){}
