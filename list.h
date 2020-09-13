@@ -3,7 +3,7 @@
 #include"student.h"
 class List{
 	public:
-		void addStudent(Student student);
+		void addStudent(Student &student);
 		Student searchStudent(string argument);
 		void changeScore(string argument);
 		void printAllStudent(); 

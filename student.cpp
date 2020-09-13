@@ -6,6 +6,7 @@
 Student::Student(string n, string num, float m, float c, float e):name(n), number(num), math(m), chinese(c), english(e){
     average = (math+chinese+english)/3;
     total = math+chinese+english;
+    next = NULL;
 	cout<<"student constructed!"<<endl;
 }
 //按照科目修改分数功能 

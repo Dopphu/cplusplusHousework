@@ -2,18 +2,22 @@
 #include<iostream>
 #include<iomanip>
 using namespace std;
-void List::addStudent(Student student){
-	student.next = this->head;
-	this->head = &student;
+void List::addStudent(Student &student){
+	Student *temp = new Student;
+	*temp = student;
+	student.next = head;
+	head = temp;
 	counter++;
 }
 
 void List::printAllStudent(){
-	Student *temp = head;
+	Student *temp=this->head;
 	cout<<"学号"<<setw(10)<<"姓名"<<setw(6)<<"语文"<<setw(6)<<"数学"<<setw(6)<<"英语"<<setw(6)<<"总分"<<endl;
-	while(temp){
-		temp->printAll(); 
+	while(temp!=NULL){
+		temp->printAll();
 		temp = temp->next;
 	}
 	cout<<"学生总人数："<<counter<<endl;
 }
+
+
