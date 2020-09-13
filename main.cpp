@@ -13,7 +13,7 @@ void print();
 int main(){
 	cout<<"欢迎来到学生信息管理系统"<<endl;
     //先录入几个例子信息 
-	Student demo1("Dopphu", "201978030304", 100, 99, 98);
+	Student demo1("Dopphu", "201978181819", 100, 99, 98);
     Student demo2("Doyyli", "201978030314", 82, 79, 68);
     Student demo3("大哥", "201978030324", 70, 90, 98);
     demo.addStudent(demo1);

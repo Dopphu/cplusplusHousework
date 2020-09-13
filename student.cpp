@@ -29,5 +29,5 @@ void Student::setScore(string subject, float  score){
 }
 
 void Student::printAll(void){
-	cout<<number<<setw(10)<<name<<setw(6)<<chinese<<setw(6)<<math<<setw(6)<<english<<setw(6)<<total<<endl;
+	cout<<number<<"\t"<<setw(15)<<name<<"\t"<<setw(10)<<chinese<<"\t"<<setw(10)<<math<<"\t"<<setw(10)<<english<<"\t"<<setw(10)<<total<<"\t"<<endl;
 } 

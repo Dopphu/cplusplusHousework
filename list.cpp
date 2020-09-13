@@ -12,7 +12,7 @@ void List::addStudent(Student &student){
 
 void List::printAllStudent(){
 	Student *temp=this->head;
-	cout<<"学号"<<setw(10)<<"姓名"<<setw(6)<<"语文"<<setw(6)<<"数学"<<setw(6)<<"英语"<<setw(6)<<"总分"<<endl;
+	cout<<"学号\t"<<setw(15)<<"姓名\t"<<setw(10)<<"语文\t"<<setw(10)<<"数学\t"<<setw(10)<<"英语\t"<<setw(10)<<"总分\t"<<endl;
 	while(temp!=NULL){
 		temp->printAll();
 		temp = temp->next;
@@ -25,6 +25,8 @@ Student* List::searchStudent(string argument){
 	while(temp!=NULL){
 		if(temp->name==argument || temp->number==argument){
 			return temp;
+		}else{
+			return NULL;
 		}
 	}
 }
