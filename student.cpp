@@ -10,16 +10,15 @@ Student::Student(string n, string num, float m, float c, float e):name(n), numbe
 }
 //按照科目修改分数功能 
 void Student::setScore(string subject, float  score){
-	char signal;
 	/*这三个cout应该可以在优化一下*/
 	if(subject == "math"){
-		math = score;
+		this->math = score;
 		cout<<"修改成功->math:"<<score<<endl; 
 	}else if(subject == "chinese"){
-		chinese = score;
+		this->chinese = score;
 		cout<<"修改成功->chinese:"<<score<<endl; 
 	}else if(subject == "english"){
-		english = score;
+		this->english = score;
 		cout<<"修改成功->english:"<<score<<endl; 
 	}else{
 		cout<<"科目不存在"<<endl; 
@@ -29,5 +28,5 @@ void Student::setScore(string subject, float  score){
 }
 
 void Student::printAll(void){
-	cout<<number<<setw(10)<<name<<setw(6)<<chinese<<setw(6)<<math<<setw(6)<<english<<endl;
+	cout<<number<<setw(10)<<name<<setw(6)<<chinese<<setw(6)<<math<<setw(6)<<english<<setw(6)<<total<<endl;
 } 

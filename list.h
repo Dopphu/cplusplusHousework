@@ -2,13 +2,15 @@
 #define LIST_H
 #include"student.h"
 class List{
-	void addStudnet(Student student);
-	Student searchStudent(string argument);
-	void changeScore(string argument);
-	List(){
-		counter = 0;
-		head = NULL;
-	}
+	public:
+		void addStudent(Student student);
+		Student searchStudent(string argument);
+		void changeScore(string argument);
+		void printAllStudent(); 
+		List(){
+			counter = 0;
+			head = NULL;
+		}
 	private:
 		int counter;
 		Student *head;
