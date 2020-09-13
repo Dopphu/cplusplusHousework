@@ -3,18 +3,22 @@
 #include"student.h"
 #include"list.h"
 using namespace std;
-Student demo1("Dopphu", "201978030304", 100, 99, 98);
+//Student demo1("Dopphu", "201978030304", 100, 99, 98);
 List demo;
-Student demo3("大哥", "201978030324", 70, 90, 98);
+//Student demo3("大哥", "201978030324", 70, 90, 98);
 void add();
 void changeScore();
 void searchScore();
 void print();
 int main(){
 	cout<<"欢迎来到学生信息管理系统"<<endl;
-//    Student demo1("Dopphu", "201978030304", 100, 99, 98);
-//    Student demo2("Doyyli", "201978030314", 82, 79, 68);
-//    Student demo3("大哥", "201978030324", 70, 90, 98);
+    //先录入几个例子信息 
+	Student demo1("Dopphu", "201978030304", 100, 99, 98);
+    Student demo2("Doyyli", "201978030314", 82, 79, 68);
+    Student demo3("大哥", "201978030324", 70, 90, 98);
+    demo.addStudent(demo1);
+    demo.addStudent(demo2);
+    demo.addStudent(demo3);
     
 //    demo1.printAll();
 //	demo1.setScore("math", 66);
@@ -22,9 +26,7 @@ int main(){
     cout<<"project running"<<endl;
     int times = 0;
     char selection;
-//    demo.addStudent(demo1);
-//    demo.addStudent(demo2);
-//    demo.addStudent(demo3);
+
 //    demo.printAllStudent();
 	//和游戏一样，程序死循环开始！ 
 	while(true){
@@ -111,11 +113,21 @@ void print(){
 ///*这个修改功能有问题，待修复...me:问题可能出在链表的插入模块*/修复成功，版本号： a7d2e83d7b25e8dab2f07244bd61a54ce645ed6c 
 void changeScore(){
 	/*仍然需要表的使用，因为要通过姓名进行定位*/
-	cout<<"请输入修改科目及分数"<<endl;
-	string subject;
-	float score;
-	cin>>subject>>score; 
-	/*用demo1实验一下*/
-	demo1.setScore(subject, score); 
-	demo1.printAll();
+	cout<<"这是成绩修改功能，请输入姓名或学号："<<endl;
+	string key;
+	cin>>key;
+	Student *temp = demo.searchStudent(key);
+	if(temp==NULL){
+		cout<<"未查询到相应学生信息"<<endl; 
+	}
+	else{
+		cout<<"请输入修改科目及分数"<<endl;
+		string subject;
+		float score;
+		cin>>subject>>score; 
+		/*用demo1实验一下*/
+		temp->setScore(subject, score); 
+		temp->printAll();
+		cout<<"信息修改成功！"<<endl;
+	}
 }

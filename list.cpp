@@ -5,7 +5,7 @@ using namespace std;
 void List::addStudent(Student &student){
 	Student *temp = new Student;
 	*temp = student;
-	student.next = head;
+	temp->next = head;
 	head = temp;
 	counter++;
 }
