@@ -33,7 +33,8 @@ int main(){
 //   			demo.printAllStudent();
 			cout<<"Q/q 退出！"<<endl
     		<<"P/p 打印所有学生成绩"<<endl 
-			<<"A/a 录入学生信息"<<endl
+			<<"A/a 录入学生成绩"<<endl
+			<<"S/s 查询学生成绩"<<endl
 			<<"C/c 修改学生成绩"<<endl;
     		cin>>selection;
     		//判断选项是否为Q/q，是则退出程序 
@@ -50,15 +51,18 @@ int main(){
 				case 'c':
 					changeScore();
 					break;
-//				case 'S':
-//				case 's':
+				case 'S':
+				case 's':
+					searchScore();
+					break;
 				case 'P':
 				case 'p':
-					print();	
+					print();
+					break;	
 			}//switch语句结束 
     		cout<<"第"<<times<<"次运行结束..."<<endl;
 	}
-	cout<<"project end..."<<endl;
+	cout<<"project exit!"<<endl;
     return 0;
 }
 
@@ -89,12 +93,22 @@ void add(){
 	}
 }
 void searchScore(){
-	cout<<"这是查询功能"<<endl;
+	//输入值的读取 
+	cout<<"这是查询功能，请输入姓名或学号"<<endl;
+	string key;//关键字
+	cin>>key; 
+	Student *temp = demo.searchStudent(key);
+	if(temp){
+		cout<<"查询成功！"<<endl;
+		temp->printAll();
+	}else{
+		cout<<"未查询到相关信息!"<<endl; 
+	} 
 }
 void print(){
 	demo.printAllStudent();
 }
-/*这个修改功能有问题，待修复...me:问题可能出在链表的插入模块*/
+///*这个修改功能有问题，待修复...me:问题可能出在链表的插入模块*/修复成功，版本号： a7d2e83d7b25e8dab2f07244bd61a54ce645ed6c 
 void changeScore(){
 	/*仍然需要表的使用，因为要通过姓名进行定位*/
 	cout<<"请输入修改科目及分数"<<endl;

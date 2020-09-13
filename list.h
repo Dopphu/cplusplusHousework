@@ -4,7 +4,7 @@
 class List{
 	public:
 		void addStudent(Student &student);
-		Student searchStudent(string argument);
+		Student* searchStudent(string argument);
 		void changeScore(string argument);
 		void printAllStudent(); 
 		List(){

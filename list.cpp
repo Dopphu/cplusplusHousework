@@ -20,4 +20,12 @@ void List::printAllStudent(){
 	cout<<"学生总人数："<<counter<<endl;
 }
 
+Student* List::searchStudent(string argument){
+	Student* temp = this->head;
+	while(temp!=NULL){
+		if(temp->name==argument || temp->number==argument){
+			return temp;
+		}
+	}
+}
 
